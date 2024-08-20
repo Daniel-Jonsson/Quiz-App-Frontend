@@ -1,0 +1,54 @@
+<div class="main-container">
+    <mat-card class="login-container">
+        <mat-card-header>
+            <div class="login-card-heading">
+            <mat-card-title>Welcome to Quizziz!</mat-card-title>
+            <mat-card-subtitle>Please log in or register</mat-card-subtitle>
+            </div>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="submit()" class="testar">
+            <p>
+                <mat-form-field>
+                <mat-label>Enter username</mat-label>
+                <input
+                    type="text"
+                    matInput
+                    placeholder="Username"
+                    [formControl]="username"
+                    required
+                />
+                @if (username.invalid) {
+                <mat-error>{{ getErrorMessage(username) }}</mat-error>
+                }
+                </mat-form-field>
+            </p>
+
+            <p>
+                <mat-form-field>
+                <mat-label>Enter Password</mat-label>
+                <input
+                    matInput
+                    [type]="hide ? 'password' : 'text'"
+                    placeholder="Password"
+                    required
+                    [formControl]="password"
+                />
+                <button mat-icon-button matSuffix (click)="hide = !hide">
+                    <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+                </button>
+
+                @if (password.invalid) {
+                <mat-error>{{ getErrorMessage(password) }}</mat-error>
+                }
+                </mat-form-field>
+            </p>
+
+            <div class="button-group">
+                <button type="submit" mat-raised-button color="primary">Login</button>
+                <button mat-raised-button (click)="onRegister()" type="button">Register</button>
+            </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>

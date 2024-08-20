@@ -1,0 +1,20 @@
+<mat-spinner *ngIf="quizzes.length === 0"></mat-spinner>
+<div class="main-container" *ngIf="!(quizzes.length === 0)">
+  <app-quiz-filtering
+    (searchString)="searchString = $event"
+    (selectedChips)="selectedChips = $event"
+  ></app-quiz-filtering>
+  <div class="quiz-content-container">
+    <div class="quiz-list-container">
+      <app-quizzes-list-item
+        *ngFor="let quiz of filteredQuizzes"
+        [quiz]="quiz"
+        class="testar"
+      ></app-quizzes-list-item>
+    </div>
+  </div>
+  <div class="quiz-empty-container" *ngIf="filteredQuizzes.length === 0">
+    <p>No quizzes to show.</p>
+  </div>
+  <app-footer></app-footer>
+</div>

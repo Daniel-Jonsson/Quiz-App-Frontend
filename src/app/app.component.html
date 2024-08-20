@@ -1,0 +1,14 @@
+<app-top-navbar (onToggle)="sidenav.toggle()"></app-top-navbar>
+<mat-sidenav-container [hasBackdrop]="true">
+  <mat-sidenav
+  
+  #sidenav mode="side">
+    <app-sidebar-menu
+      (onClickEvent)="sidenav.toggle()"
+    ></app-sidebar-menu>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

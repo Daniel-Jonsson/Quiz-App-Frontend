@@ -1,0 +1,7 @@
+.quiz-list-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+.quiz-list-container> app-my-quizzes-item {
+    flex: calc((80vw - 30px) / 3);
+}

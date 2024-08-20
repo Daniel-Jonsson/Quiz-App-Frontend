@@ -1,0 +1,50 @@
+<h1 mat-dialog-title>New question</h1>
+
+<mat-form-field class="question-input">
+  <label for="question-text">Question text:</label>
+  <input [(ngModel)]="questionText" name="question-text" matInput />
+</mat-form-field>
+<mat-form-field class="question-input">
+  <label for="answer-one">Answer 1:</label>
+  <input [(ngModel)]="answerOne" name="answer-one" matInput />
+
+  <mat-checkbox
+    id="one-correct"
+    [(ngModel)]="oneCorrect"
+    (click)="oneValueChecked($event)"
+    >Correct answer?</mat-checkbox
+  >
+</mat-form-field>
+<mat-form-field class="question-input">
+  <label for="answer-two">Answer 2:</label>
+  <input [(ngModel)]="answerTwo" name="answer-two" matInput />
+  <mat-checkbox
+    [(ngModel)]="twoCorrect"
+    (click)="oneValueChecked($event)"
+    id="two-correct"
+    >Correct answer?</mat-checkbox
+  >
+</mat-form-field>
+<mat-form-field class="question-input">
+  <label for="answer-three">Answer 3:</label>
+  <input [(ngModel)]="answerThree" name="answer-three" matInput />
+  <mat-checkbox
+    [(ngModel)]="threeCorrect"
+    (click)="oneValueChecked($event)"
+    id="three-correct"
+    type="checkbox"
+    >Correct answer?</mat-checkbox
+  >
+</mat-form-field>
+
+<div mat-dialog-actions align="end">
+  <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+  <button
+    mat-raised-button
+    (click)="saveQuestion()"
+    color="primary"
+    cdkFocusInitial
+  >
+    OK
+  </button>
+</div>

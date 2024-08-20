@@ -1,0 +1,14 @@
+.top-navbar {
+  min-height: 80px;
+  background-color: var(--primary-blue-color);
+  color: var(--primary-white-color);
+}
+
+.top-navbar h1 {
+  font-size: 32px;
+}
+
+mat-toolbar {
+  position: relative;
+  z-index: 2;
+}

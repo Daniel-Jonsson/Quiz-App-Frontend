@@ -1,0 +1,13 @@
+.quiz-empty-container {
+  padding-top: 20vh;
+  padding-bottom: 20vh;
+  text-align: center;
+  font-size: large;
+}
+.quiz-list-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+.quiz-list-container > app-quizzes-list-item {
+    flex: calc((80vw - 30px) / 3);
+}

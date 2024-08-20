@@ -1,0 +1,27 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ quiz.title }}</mat-card-title>
+      <mat-card-subtitle>
+        <mat-chip [disabled]="true">{{ quiz.subject.subjectName }}</mat-chip>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      {{ quiz.description }}
+      <mat-divider></mat-divider>
+      <div class="questions-container">
+        {{ quiz.questions.length }} questions
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        (click)="onPlay(quiz)"
+        [disabled]="quiz.questions.length === 0"
+        color="primary"
+      >
+        Play
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

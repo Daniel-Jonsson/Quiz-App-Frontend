@@ -1,0 +1,14 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+<div class="profile-container" *ngIf="!loading">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title
+        >{{ currentUser.firstName }} {{ currentUser.lastName }}</mat-card-title
+      >
+      <mat-card-subtitle>&#64;{{ currentUser.userName }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      {{ userQuizzes.length }} quizzes posted
+    </mat-card-content>
+  </mat-card>
+</div>

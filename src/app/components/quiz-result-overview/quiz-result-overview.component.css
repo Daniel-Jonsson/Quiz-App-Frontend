@@ -1,0 +1,4 @@
+.result-overview-container {
+  padding: 20px;
+  height: calc(90vh - 190px);
+}

@@ -1,0 +1,107 @@
+.main-container {
+  width: 70vw;
+  background-color: #fffdf5;
+  margin: auto;
+  border-radius: 8px;
+  transform: translateY(calc(5vh - 10px));
+  box-shadow: 8px 8px 8px 0px rgba(0, 0, 0, 0.1);
+}
+h2 {
+  height: 50px;
+  text-align: center;
+  padding: 10px;
+}
+.play-container {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 10px auto;
+  min-height: calc(90vh - 150px);
+  border-radius: 8px;
+  > .question-overview-container {
+    margin-right: 20px;
+  }
+  > .question-desc-area {
+    margin-left: 20px;
+  }
+}
+
+.question-desc-area {
+  display: flex;
+  flex-flow: column;
+  box-shadow: -4px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  max-height: calc(90vh - 150px);
+  width: calc(100% - 15vw - 140px);
+}
+.question-overview-container {
+  display: flex;
+  flex-flow: column;
+  padding: 20px;
+  border-radius: 8px;
+  width: 15vw;
+  margin-bottom: 20px;
+  margin-left: auto;
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+}
+
+.question-title-area {
+  border: 2px solid var(--secondary-blue-color);
+  padding: 10px;
+  border-radius: 8px;
+}
+.play-buttons-container {
+  padding-left: 20 px;
+  margin: 30px;
+}
+
+.button-group {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 10px;
+  margin-top: auto;
+  align-items: flex-end;
+  align-self: flex-end;
+}
+
+.question-alternative-area {
+  padding-top: 20px;
+}
+
+.question-alternative-area p {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 30px;
+  background-color: #f3f3f3;
+  box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.1);
+  transition: 0.2s background-color ease-in-out;
+  color: black;
+}
+.test-container {
+  display: flex;
+  margin-top: auto;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.question-alternative-area p:hover {
+  background-color: #3c9bc781;
+  cursor: pointer;
+  color: white;
+}
+.play-button {
+  margin-inline-start: 20px;
+}
+
+.right-answer {
+  background-color: #80bb41d1 !important;
+  color: white !important;
+}
+
+.wrong-answer {
+  background-color: #f1392fd1 !important;
+  color: white !important;
+}

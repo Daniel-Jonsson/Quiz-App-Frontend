@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto&display=swap');
+@import "./custom-theme.scss";
+
+:root {
+  --default-color: #fff;
+  --primary-blue-color: #146c94;
+  --secondary-blue-color: #19a7ce;
+  --primary-white-color: #f6f1f1;
+  --success-color-green: #77DD77;
+  --beige-color: #ffecd6;
+  --accent-color: #b6b6b6;
+  --accent-color-dark: #7a7979;
+  --link-hover-color: linear-gradient(to right, midnightblue, midnightblue 50%, royalblue 50%);
+  /* Add more colors when needed. */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, span {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+p, div {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+
+.quiz-content-container {
+  padding-left: 10px;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-main-title {
+  display: block;
+  width: 400px;
+  font-size: 32px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+.quiz-list-container {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: stretch;
+  column-gap: 10px;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-spinner {
+  margin: auto;
+  transform: translateY(calc(50vh - 80px));
+}

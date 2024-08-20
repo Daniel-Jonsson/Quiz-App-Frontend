@@ -1,0 +1,52 @@
+<h1 mat-dialog-title>Create new quiz</h1>
+
+<div align="end" class="character-count">
+  {{ quizNameCharactersLeft }} characters left
+</div>
+<mat-form-field>
+  <input
+    #quiz_name
+    matInput
+    placeholder="Quiz name"
+    maxlength="35"
+    [(ngModel)]="quizNameInput"
+    (ngModelChange)="updateQuizNameCharsLeft()"
+  />
+</mat-form-field>
+<div align="end" class="character-count">
+  {{ descriptionCharactersLeft }} characters left
+</div>
+<mat-form-field>
+  <input
+    #quiz_description
+    matInput
+    placeholder="Quiz description"
+    maxlength="100"
+    [(ngModel)]="descriptionInput"
+    (ngModelChange)="updateDescriptionCharsLeft()"
+  />
+</mat-form-field>
+<mat-form-field>
+  <mat-label>Subject</mat-label>
+  <mat-select #subject_select name="subject">
+    @for (subject of subjects; track subject) {
+    <mat-option [value]="subject.subjectName">{{
+      subject.subjectName
+    }}</mat-option>
+    }
+  </mat-select>
+</mat-form-field>
+
+<div mat-dialog-actions align="end">
+  <button mat-raised-button color="warn" mat-dialog-close>Cancel</button>
+  <button
+    mat-raised-button
+    (click)="
+      saveQuiz(quiz_name.value, subject_select.value, quiz_description.value)
+    "
+    color="primary"
+    cdkFocusInitial
+  >
+    OK
+  </button>
+</div>

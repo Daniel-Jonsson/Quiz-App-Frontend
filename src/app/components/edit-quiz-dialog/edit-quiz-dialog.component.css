@@ -1,0 +1,21 @@
+.edit-question-text {
+  font-size: large;
+}
+
+.answer-chip {
+  margin-top: 10px;
+  background-color: #f3f3f3;
+  color: #a6a6a6;
+  font-family: "Poppins", sans-serif;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.correct {
+  background-color: var(--success-color-green);
+  color: white;
+}
+
+.edit-header {
+  display: inline;
+}

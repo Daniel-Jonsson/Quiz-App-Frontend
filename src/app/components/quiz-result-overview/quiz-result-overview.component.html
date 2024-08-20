@@ -1,0 +1,7 @@
+<div class="result-overview-container">
+  <h1>Quiz title: {{ quiz.title }}</h1>
+  <p>Your performance for this quiz:</p>
+  <p>Overall Score: {{ finalScore }}/{{ maxScore }}</p>
+  <p>Correct answers: {{ finalScore / 10 }}/{{ selectedAnswersMap.size }}</p>
+  <button mat-raised-button color="primary" (click)="onClick()">Back</button>
+</div>

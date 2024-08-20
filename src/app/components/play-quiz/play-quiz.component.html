@@ -1,0 +1,58 @@
+<mat-spinner *ngIf="!quiz"></mat-spinner>
+<div *ngIf="quiz" class="main-container">
+  <h2>{{ !showResults ? quiz.title : "Results" }}</h2>
+  <mat-progress-bar
+    mode="determinate"
+    [value]="!showResults ? (100 / questions.length) * currentQuestionNo : 100"
+  ></mat-progress-bar>
+  <div *ngIf="!showResults" class="play-container">
+    <div class="question-desc-area">
+      <div class="question-title-area">
+        <p style="font-weight: bold">Question {{ currentQuestionNo + 1 }}</p>
+        <p>{{ questions[currentQuestionNo].question_text }}</p>
+      </div>
+      <div class="question-alternative-area">
+        <p
+          *ngFor="let alternative of questions[currentQuestionNo].answers"
+          (click)="onAlternativeSelected(alternative)"
+          [ngClass]="{
+            'right-answer':
+              selectedAnswersMap.get(currentQuestionNo) && alternative.correct,
+            'wrong-answer':
+              isCorrectAnswered() === false && !alternative.correct
+          }"
+        >
+          {{ alternative.answer }}
+        </p>
+      </div>
+      <div class="test-container">
+        Score: {{ currentScore }} points
+        <div class="button-group">
+          <button mat-raised-button color="primary" (click)="prevQuestion()">
+            Prev
+          </button>
+          <button mat-raised-button color="primary" (click)="nextQuestion()">
+            {{
+              currentQuestionNo === questions.length - 1
+                ? "View Result"
+                : "Next"
+            }}
+          </button>
+        </div>
+      </div>
+    </div>
+    <app-question-overview
+      class="question-overview-container"
+      [questionAnswered]="selectedAnswersMap"
+      [questions]="questions"
+      (questionClicked)="goToQuestion($event)"
+    ></app-question-overview>
+  </div>
+  <app-quiz-result-overview
+    *ngIf="showResults"
+    [quiz]="quiz"
+    [selectedAnswersMap]="selectedAnswersMap"
+    [finalScore]="currentScore"
+    [maxScore]="maxScore"
+  ></app-quiz-result-overview>
+</div>

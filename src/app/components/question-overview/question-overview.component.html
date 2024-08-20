@@ -1,0 +1,19 @@
+<div>
+  <div class="question-overview">
+    <p>Question {{ currentQuestion }}/{{ questions.length }}</p>
+  </div>
+  <div class="question-list">
+    <p
+      *ngFor="let question of questions; index as i"
+      (click)="questionClicked.emit(i)"
+      class="question-list"
+      [ngClass]="{
+        current: isCurrentQuestion(i),
+        correct: isCorrectAnswered(i) === true,
+        wrong: isCorrectAnswered(i) === false
+      }"
+    >
+      {{ i + 1 }}
+    </p>
+  </div>
+</div>

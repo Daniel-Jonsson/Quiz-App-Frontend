@@ -1,0 +1,32 @@
+<span class="edit-header">
+  <h1 class="edit-header" mat-dialog-title>Edit quiz</h1>
+</span>
+<div mat-dialog-actions>
+  <button mat-raised-button color="warn" mat-dialog-close>Done</button>
+  <button
+    mat-raised-button
+    (click)="addQuestion()"
+    color="primary"
+    cdkFocusInitial
+  >
+    Add question
+  </button>
+</div>
+
+<mat-card *ngFor="let question of quiz.questions">
+  <mat-card-content class="edit-question-text">{{
+    question.question_text
+  }}</mat-card-content>
+  <div
+    class="answer-chip"
+    *ngFor="let answer of question.answers"
+    [ngClass]="{ correct: answer.correct }"
+  >
+    {{ answer.answer }}
+  </div>
+  <div mat-dialog-actions align="end">
+    <button mat-mini-fab (click)="deleteQuestion(question)" color="warn">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</mat-card>

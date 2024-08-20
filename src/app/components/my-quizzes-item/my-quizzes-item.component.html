@@ -1,0 +1,56 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{ myQuiz.title }}</mat-card-title>
+      <mat-card-subtitle>
+        <mat-chip [disabled]="true">{{ myQuiz.subject.subjectName }}</mat-chip>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      {{ myQuiz.description }}
+      <mat-divider></mat-divider>
+      <div class="questions-container">
+        {{
+          myQuiz.questions.length === 1
+            ? myQuiz.questions.length + " question"
+            : myQuiz.questions.length + " questions"
+        }}
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="onClickEdit(myQuiz._id)"
+      >
+        Edit
+      </button>
+      <button
+        mat-raised-button
+        color="warn"
+        (click)="onClickDelete(myQuiz._id)"
+      >
+        Delete
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<!--
+    <mat-card>
+        <mat-card-header>{{myQuiz.title}}</mat-card-header>
+        <mat-card-content class="quiz-item-subject">
+            Subject: 
+        </mat-card-content>
+        <mat-card-content class="quiz-item-questions">
+            Questions: {{myQuiz.questions.length}}
+        </mat-card-content>
+        
+        <button mat-raised-button color="primary">
+            Edit
+        </button>
+        <button mat-raised-button color="warn">
+            Delete
+        </button>
+    </mat-card>
+   -->

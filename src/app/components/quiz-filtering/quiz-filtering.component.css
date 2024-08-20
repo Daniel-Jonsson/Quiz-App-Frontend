@@ -1,0 +1,21 @@
+.filter-container {
+  display: flex;
+  flex-flow: column;
+  width: calc(80vw - 20px);
+  background-color: #56727f1c;
+  border-radius: 8px;
+  min-height: 25vh;
+  margin: auto;
+  margin-top: 5vh;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.search-field {
+  width: 75%;
+  align-self: center;
+}
+
+mat-chip-listbox {
+  width: 75%;
+}

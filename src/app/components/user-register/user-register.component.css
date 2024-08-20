@@ -1,0 +1,80 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+}
+
+.register-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  margin: auto;
+  padding: 25px 0 25px 0;
+  width: 45vw;
+  box-shadow: 8px 8px 8px 8px rgba(0, 0, 0, 0.1);
+  min-height: calc(60vh - 80px);
+  border-radius: 8px;
+}
+
+.field-group-container {
+  display: flex;
+  flex-flow: row;
+  gap: 5px;
+  justify-content: space-between;
+}
+
+mat-card-header,
+mat-card-content {
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.register-card-heading > mat-card-subtitle {
+  margin-top: 10px;
+  text-align: center;
+}
+
+mat-card-title {
+  font-size: 42px;
+  font-family: "Poppins", sans-serif;
+}
+
+form {
+  width: 100%;
+}
+
+.button-group {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.button-group button {
+  width: 100%;
+}
+.button-group a:hover {
+  transition: 0.2s ease-in-out;
+  color: var(--link-hover-color);
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.login-container h1 {
+  font-family: "Poppins", sans-serif;
+}
+
+.mat-header-container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mat-header-title {
+  font-size: 40px;
+  font-family: "Poppins", sans-serif;
+}

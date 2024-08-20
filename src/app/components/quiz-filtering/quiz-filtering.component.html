@@ -1,0 +1,18 @@
+<div class="filter-container">
+  <mat-form-field subscriptSizing="dynamic" class="search-field">
+    <mat-label>Search for quiz name</mat-label>
+    <mat-icon matPrefix>search</mat-icon>
+    <input
+      type="text"
+      matInput
+      placeholder="An awesome quiz!"
+      [(ngModel)]="searchText"
+      (ngModelChange)="searchString.emit(searchText)"
+    />
+  </mat-form-field>
+  <mat-chip-listbox multiple [selectable]="true" (change)="onChange($event)">
+    <mat-chip-option *ngFor="let subject of subjects">{{
+      subject.subjectName
+    }}</mat-chip-option>
+  </mat-chip-listbox>
+</div>

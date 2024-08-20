@@ -1,0 +1,16 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+<div class="quiz-content-container" *ngIf="!loading">
+  <h1 class="content-main-title">My quizzes</h1>
+  <button mat-raised-button (click)="openCreateQuizDialog()" color="primary">
+    Create new Quiz
+  </button>
+  <div class="quiz-list-container">
+    <app-my-quizzes-item
+      *ngFor="let quiz of myQuizzes"
+      [myQuiz]="quiz"
+      (deleteEvent)="deleteMyQuiz($event)"
+      (editEvent)="openEditQuizDialog($event)"
+      class="testar"
+    ></app-my-quizzes-item>
+  </div>
+</div>

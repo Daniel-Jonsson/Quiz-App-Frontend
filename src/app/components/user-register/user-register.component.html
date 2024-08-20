@@ -1,0 +1,97 @@
+<div class="main-container">
+    <mat-card class="register-container">
+        <mat-card-header>
+            <div class="register-card-heading">
+            <mat-card-title>Welcome to Quizziz!</mat-card-title>
+            <mat-card-subtitle
+                >Please register a new user below</mat-card-subtitle
+            >
+            </div>
+        </mat-card-header>
+        <mat-card-content>
+            <form [formGroup]="form" (ngSubmit)="submit()" class="testar">
+            <div class="field-group-container">
+                <mat-form-field>
+                <mat-label>Enter Firstname</mat-label>
+                <input
+                    type="text"
+                    matInput
+                    placeholder="John"
+                    [formControl]="firstname"
+                    required
+                />
+                @if (firstname.invalid) {
+                <mat-error>{{ getErrorMessage(firstname) }}</mat-error>
+                }
+                </mat-form-field>
+
+                <mat-form-field>
+                <mat-label>Enter Lastname</mat-label>
+                <input
+                    matInput
+                    type="text"
+                    placeholder="Doe"
+                    required
+                    [formControl]="lastname"
+                />
+
+                @if (lastname.invalid) {
+                <mat-error>{{ getErrorMessage(lastname) }}</mat-error>
+                }
+                </mat-form-field>
+            </div>
+
+            <mat-form-field>
+                <mat-label>Enter username</mat-label>
+                <input type="text" matInput [formControl]="username" required />
+                @if (username.invalid) {
+                <mat-error>{{ getErrorMessage(username) }}</mat-error>
+                }
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Enter Password</mat-label>
+                <input
+                matInput
+                [type]="hide ? 'password' : 'text'"
+                required
+                [formControl]="password"
+                />
+                <button mat-icon-button matSuffix (click)="hide = !hide">
+                <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+                </button>
+
+                @if (password.invalid) {
+                <mat-error>{{ getErrorMessage(password) }}</mat-error>
+                }
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Confirm Password</mat-label>
+                <input
+                matInput
+                [type]="hideConfirm ? 'password' : 'text'"
+                required
+                [formControl]="confirmPassword"
+                />
+                <button mat-icon-button matSuffix (click)="hideConfirm = !hideConfirm">
+                <mat-icon>{{
+                    hideConfirm ? "visibility_off" : "visibility"
+                }}</mat-icon>
+                </button>
+
+                @if (confirmPassword.invalid) {
+                <mat-error>{{ getErrorMessage(confirmPassword) }}</mat-error>
+                }
+            </mat-form-field>
+
+            <div class="button-group">
+                <button type="submit" mat-raised-button color="primary">
+                Register
+                </button>
+                <a [routerLink]="['/login']">Back to login page</a>
+            </div>
+            </form>
+        </mat-card-content>
+    </mat-card>
+</div>
